@@ -1,18 +1,30 @@
 {
   "@context": {
+    "@language": "en-us",
     "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
     "CIP119": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0119/README.md#",
     "hashAlgorithm": "CIP100:hashAlgorithm",
     "body": {
       "@id": "CIP119:body",
       "@context": {
+        "bio": "CIP119:bio",
+        "email": "CIP119:email",
+        "givenName": "CIP119:givenName",
+        "motivations": "CIP119:motivations",
+        "objectives": "CIP119:objectives",
+        "paymentAddress": "CIP119:paymentAddress",
+        "qualifications": "CIP119:qualifications",
+        "image": {
+          "@id": "CIP119:image",
+          "@context": {
+            "ImageObject": "https://schema.org/ImageObject"
+          }
+        },
         "references": {
           "@id": "CIP119:references",
           "@container": "@set",
           "@context": {
             "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
-            "Identity": "CIP100:IdentityReference",
-            "Link": "CIP100:LinkReference",
             "Other": "CIP100:OtherReference",
             "label": "CIP100:reference-label",
             "uri": "CIP100:reference-uri",
@@ -24,14 +36,7 @@
               }
             }
           }
-        },
-        "paymentAddress": "CIP119:paymentAddress",
-        "givenName": "CIP119:givenName",
-        "image": "CIP119:image",
-        "objectives": "CIP119:objectives",
-        "motivations": "CIP119:motivations",
-        "qualifications": "CIP119:qualifications",
-        "doNotList": "CIP119:doNotList"
+        }
       }
     },
     "authors": {
@@ -50,29 +55,78 @@
       }
     }
   },
-  "authors": [],
-  "hashAlgorithm": "blake2b-256",
+  "authors": [
+    {
+      "witness": {
+        "publicKey": {
+          "@value": "a401010327200621582052177dd7f505594a86e8a8684b7410a3a45b033aad9962314d339688a3ffabe9"
+        },
+        "signature": {
+          "@value": "84582aa201276761646472657373581d6109c4c79d7e55097605ca0120305dd71719126fb1871cd3eae073cec1a166686173686564f45844566572696679204452657020647265703138633664773065367a396c7836356632327a727a676c307a34396a34386b3339747478716b3471366839353375747a65707935584010cf068932bffebd86382060f71220415b59adb909093aacbd7709c10289f742750bfa4bfc49d9719e466f7b2f609dc105f0a5c5a4c6d8b9bac73de2750a700e"
+        },
+        "witnessAlgorithm": {
+          "@value": "Ed25519"
+        }
+      }
+    }
+  ],
+  "hashAlgorithm": {
+    "@value": "blake2b-256"
+  },
   "body": {
-    "givenName": "Cerkoryn",
-    "motivations": "Test motivation statement",
-    "objectives": "Test objectives statement",
-    "paymentAddress": "addr_test1qp7d7mkkfx8kxj8qtz390eyhex3qyyffe73hjq2ff8akf6vndhtk4st9scjfc8y9lyut3velnle8e47t2ytl99k6ydfsdwwhmz",
-    "qualifications": "Test qualification statement",
+    "bio": {
+      "@value": "I'm a cybersecurity professional specializing in penetration testing, with several industry certifications under my belt. Since early 2021, I've been an active member of the Cardano community on X, Discord, and other social platforms. I've contributed to open-source community projects such as Iagon Docker, Changwatch.com, the Cardano Open Source Index, and the Edinburgh Decentralization Index. As a founding member of Intersect, I focus on governance and community-driven initiatives within the Cardano ecosystem. Additionally, I run my own Iagon storage node and Rosenbridge Watcher from my basement homelab. My Libertarian values drive my commitment to decentralization and maximizing individual agency in the blockchain space."
+    },
+    "email": {
+      "@value": "Cerkoryn@proton.me"
+    },
+    "givenName": {
+      "@value": "Cerkoryn"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "contentUrl": "https://ipfs.io/ipfs/QmYBJpj8h3oobMB2mUeS2b7o8YJ2HFfTi9D1dqYjFeWFfC",
+      "sha256": "fb19bd73cd45acf50db5adacfd69fe6f41a6b9205382bef5fe1aabfccfcd7cbe"
+    },
+    "motivations": {
+      "@value": "My motivations are centered around the belief in sound money that operates within a secure, egalitarian, and modern financial system, free from the control of a handful of elites. I am driven by the desire to enhance freedom for everyone. By becoming a delegate representative, I aim to contribute to the development of a financial ecosystem that embodies these principles, ensuring that Cardano remains a beacon of decentralized governance and finance."
+    },
+    "objectives": {
+      "@value": "My primary objective is to enhance the Cardano ecosystem by addressing key issues such as \"sticky stake\" and improving the Rewards Sharing Scheme (RSS). I aim to spearhead an Incentives Working Group through Intersect this Winter to develop and implement these improvements. Additionally, I believe in prioritizing the completion and integration of Ouroboros Leios and the development of alternate node clients to ensure a robust and scalable network. It is crucial that the teams building node clients collaborate closely with the teams developing Ouroboros Leios, as both are significant priorities and the node clients will depend on the successful completion and implementation of Ouroboros Leios."
+    },
+    "paymentAddress": {
+      "@value": "addr1qyyuf3ua0e2sjas9egqjqvza6ut3jyn0kxr3e5l2upeuasgsfm9826q0pkhau2kf6nuj0065dgejfen0kk6t7cg0d9yqedh07y"
+    },
+    "qualifications": {
+      "@value": "With dual Bachelor's Degrees in Psychology and Cybersecurity, I'm afforded a unique technical perspective within the Cardano community. My hobbies include working on open source tools and side projects and I have a working understanding of Plutus and eUTxO architecture. This year, I attended the Indianapolis dRep Workshop and Chicago dRep Pioneer Course in-person, where I had the opportunity to meet and engage with many great Cardano visionaries. As a founding member of Intersect and an active participant in the Cardano community, I am well-equipped to represent and advocate for the interests of Cardano delegators. "
+    },
     "references": [
       {
         "@type": "Other",
-        "label": "Label",
-        "uri": "https://changwatch.com"
+        "label": {
+          "@value": "Website"
+        },
+        "uri": {
+          "@value": "https://drep.cerkoryn.com"
+        }
       },
       {
         "@type": "Other",
-        "label": "Label",
-        "uri": "https://x.com/Cerkoryn"
+        "label": {
+          "@value": "Vyra"
+        },
+        "uri": {
+          "@value": "https://vyra.io/cerkoryn"
+        }
       },
       {
         "@type": "Other",
-        "label": "Label",
-        "uri": "https://github.com/cerkoryn"
+        "label": {
+          "@value": "X"
+        },
+        "uri": {
+          "@value": "https://x.com/Cerkoryn"
+        }
       }
     ]
   }
