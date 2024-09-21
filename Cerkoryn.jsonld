@@ -7,13 +7,13 @@
     "body": {
       "@id": "CIP119:body",
       "@context": {
+        "givenName": "CIP119:givenName",
         "bio": "CIP119:bio",
         "email": "CIP119:email",
-        "givenName": "CIP119:givenName",
-        "motivations": "CIP119:motivations",
-        "objectives": "CIP119:objectives",
         "paymentAddress": "CIP119:paymentAddress",
         "qualifications": "CIP119:qualifications",
+        "motivations": "CIP119:motivations",
+        "objectives": "CIP119:objectives",
         "image": {
           "@id": "CIP119:image",
           "@context": {
@@ -59,10 +59,10 @@
     {
       "witness": {
         "publicKey": {
-          "@value": "a401010327200621582052177dd7f505594a86e8a8684b7410a3a45b033aad9962314d339688a3ffabe9"
+          "@value": "a401010327200621582073e5abab3723190cf9ebc7be67dbd0befcf8ad92925a54f6b1041202ac1ab4df"
         },
         "signature": {
-          "@value": "84582aa201276761646472657373581d6109c4c79d7e55097605ca0120305dd71719126fb1871cd3eae073cec1a166686173686564f45844566572696679204452657020647265703138633664773065367a396c7836356632327a727a676c307a34396a34386b3339747478716b3471366839353375747a65707935584010cf068932bffebd86382060f71220415b59adb909093aacbd7709c10289f742750bfa4bfc49d9719e466f7b2f609dc105f0a5c5a4c6d8b9bac73de2750a700e"
+          "@value": "845829a201276761646472657373581c3e34d73f3a117e6d512a5086247de2a96553da255acc0b541ab9691ea166686173686564f45844566572696679204452657020647265703138633664773065367a396c7836356632327a727a676c307a34396a34386b3339747478716b3471366839353375747a6570793558409bdd955dfa9c08141dd9112a56f0784ec9283c927e70c99f5f5532e53333f08aa65618259ad6820b00c59d4e397d31ebfe5695703777452926c40737c7b3ec00"
         },
         "witnessAlgorithm": {
           "@value": "Ed25519"
@@ -85,8 +85,8 @@
     },
     "image": {
       "@type": "ImageObject",
-      "contentUrl": "https://ipfs.io/ipfs/QmYBJpj8h3oobMB2mUeS2b7o8YJ2HFfTi9D1dqYjFeWFfC",
-      "sha256": "fb19bd73cd45acf50db5adacfd69fe6f41a6b9205382bef5fe1aabfccfcd7cbe"
+      "contentUrl": "https://ipfs.io/ipfs/QmNgSnqPrjaS15zsaqg6kMcCfTPnYAEqgj6hytL82FZynE",
+      "sha256": "7213077242cb06641af077c8d8d0be748776273beb1a7cd1474991f75b4c6b15"
     },
     "motivations": {
       "@value": "My motivations are centered around the belief in sound money that operates within a secure, egalitarian, and modern financial system, free from the control of a handful of elites. I am driven by the desire to enhance freedom for everyone. By becoming a delegate representative, I aim to contribute to the development of a financial ecosystem that embodies these principles, ensuring that Cardano remains a beacon of decentralized governance and finance."
