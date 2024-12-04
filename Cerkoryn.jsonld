@@ -7,24 +7,13 @@
     "body": {
       "@id": "CIP119:body",
       "@context": {
-        "givenName": "CIP119:givenName",
-        "bio": "CIP119:bio",
-        "email": "CIP119:email",
-        "paymentAddress": "CIP119:paymentAddress",
-        "qualifications": "CIP119:qualifications",
-        "motivations": "CIP119:motivations",
-        "objectives": "CIP119:objectives",
-        "image": {
-          "@id": "CIP119:image",
-          "@context": {
-            "ImageObject": "https://schema.org/ImageObject"
-          }
-        },
         "references": {
           "@id": "CIP119:references",
           "@container": "@set",
           "@context": {
             "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Identity": "CIP119:IdentityReference",
+            "Link": "CIP119:LinkReference",
             "Other": "CIP100:OtherReference",
             "label": "CIP100:reference-label",
             "uri": "CIP100:reference-uri",
@@ -36,7 +25,14 @@
               }
             }
           }
-        }
+        },
+        "paymentAddress": "CIP119:paymentAddress",
+        "givenName": "CIP119:givenName",
+        "image": "CIP119:image",
+        "objectives": "CIP119:objectives",
+        "motivations": "CIP119:motivations",
+        "qualifications": "CIP119:qualifications",
+        "doNotList": "CIP119:doNotList"
       }
     },
     "authors": {
@@ -55,38 +51,14 @@
       }
     }
   },
-  "authors": [
-    {
-      "witness": {
-        "publicKey": {
-          "@value": "a401010327200621582073e5abab3723190cf9ebc7be67dbd0befcf8ad92925a54f6b1041202ac1ab4df"
-        },
-        "signature": {
-          "@value": "845829a201276761646472657373581c3e34d73f3a117e6d512a5086247de2a96553da255acc0b541ab9691ea166686173686564f45844566572696679204452657020647265703138633664773065367a396c7836356632327a727a676c307a34396a34386b3339747478716b3471366839353375747a6570793558409bdd955dfa9c08141dd9112a56f0784ec9283c927e70c99f5f5532e53333f08aa65618259ad6820b00c59d4e397d31ebfe5695703777452926c40737c7b3ec00"
-        },
-        "witnessAlgorithm": {
-          "@value": "Ed25519"
-        }
-      }
-    }
-  ],
+  "authors": [],
   "hashAlgorithm": {
     "@value": "blake2b-256"
   },
   "body": {
-    "bio": {
-      "@value": "I'm a cybersecurity professional specializing in penetration testing, with several industry certifications under my belt. Since early 2021, I've been an active member of the Cardano community on X, Discord, and other social platforms. I've contributed to open-source community projects such as Iagon Docker, Changwatch.com, the Cardano Open Source Index, and the Edinburgh Decentralization Index. As a founding member of Intersect, I focus on governance and community-driven initiatives within the Cardano ecosystem. Additionally, I run my own Iagon storage node and Rosenbridge Watcher from my basement homelab. My Libertarian values drive my commitment to decentralization and maximizing individual agency in the blockchain space."
-    },
-    "email": {
-      "@value": "Cerkoryn@proton.me"
-    },
+    "doNotList": false,
     "givenName": {
       "@value": "Cerkoryn"
-    },
-    "image": {
-      "@type": "ImageObject",
-      "contentUrl": "https://ipfs.io/ipfs/QmNgSnqPrjaS15zsaqg6kMcCfTPnYAEqgj6hytL82FZynE",
-      "sha256": "7213077242cb06641af077c8d8d0be748776273beb1a7cd1474991f75b4c6b15"
     },
     "motivations": {
       "@value": "My motivations are centered around the belief in sound money that operates within a secure, egalitarian, and modern financial system, free from the control of a handful of elites. I am driven by the desire to enhance freedom for everyone. By becoming a delegate representative, I aim to contribute to the development of a financial ecosystem that embodies these principles, ensuring that Cardano remains a beacon of decentralized governance and finance."
@@ -102,16 +74,34 @@
     },
     "references": [
       {
-        "@type": "Other",
+        "@type": "Link",
         "label": {
-          "@value": "Website"
+          "@value": "Tempo"
         },
         "uri": {
-          "@value": "https://drep.cerkoryn.com"
+          "@value": "https://tempo.vote/drep-profile?dRepId=drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
         }
       },
       {
-        "@type": "Other",
+        "@type": "Link",
+        "label": {
+          "@value": "1694"
+        },
+        "uri": {
+          "@value": "https://www.1694.io/en/dreps/drep18c6dw0e6z9lx65f22zrzgl0z49j48k39ttxqk4q6h953utzepy5"
+        }
+      },
+      {
+        "@type": "Link",
+        "label": {
+          "@value": "Reach Your People"
+        },
+        "uri": {
+          "@value": "https://www.ryp.io/projects/26"
+        }
+      },
+      {
+        "@type": "Link",
         "label": {
           "@value": "Vyra"
         },
@@ -120,7 +110,7 @@
         }
       },
       {
-        "@type": "Other",
+        "@type": "Identity",
         "label": {
           "@value": "X"
         },
