@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "body": {
+    "comment": "There have been numerous discussions about decreasing Cardano's Tau parameter, most notably the Parameter Change Proposal submitted by EarnCoinPool in October 2023. IOG researchers initially recommended setting the Tau parameter at 5%, but prior to the launch of the Shelley mainnet, it was changed to 20%. Additionally, due to the way block rewards are calculated—using total stake instead of active stake—the effective tax rate is actually 33%.\n\nIn my view, the Cardano Treasury has had sufficient time to accumulate value, and the focus should now shift to ensuring that treasury spending and transparency remain within reasonable bounds. The small increase in rewards for delegators and stake pool operators resulting from a lower Tau would, in my opinion, be a better use of funds than continuing to grow the treasury at this stage.\n\nOne reservation I have is that I would prefer the change to be incremental over time rather than a sudden 10% drop. However, I do not believe this change to Tau—abrupt as it may be—would negatively impact the Cardano ecosystem.\n\nFor these reasons, I am voting yes to lower Tau to 10%."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
