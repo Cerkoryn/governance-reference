@@ -28,7 +28,14 @@
         },
         "paymentAddress": "CIP119:paymentAddress",
         "givenName": "CIP119:givenName",
-        "image": "CIP119:image",
+        "image": {
+          "@id": "CIP119:image",
+          "@context": {
+            "ImageObject": "https://schema.org/ImageObject",
+            "contentUrl": "CIP119:contentUrl",
+            "sha256": "CIP119:sha256"
+          }
+        },
         "objectives": "CIP119:objectives",
         "motivations": "CIP119:motivations",
         "qualifications": "CIP119:qualifications",
@@ -52,71 +59,48 @@
     }
   },
   "authors": [],
-  "hashAlgorithm": {
-    "@value": "blake2b-256"
-  },
+  "hashAlgorithm": "blake2b-256",
   "body": {
-    "doNotList": false,
-    "givenName": {
-      "@value": "Cerkoryn"
+    "givenName": "Cerkoryn",
+    "image": {
+      "@type": "ImageObject",
+      "contentUrl": "https://raw.githubusercontent.com/Cerkoryn/governance-reference/b20027e2cd0353d58a9c912833f9be3e34d07d28/PFP.png",
+      "sha256": "f43f5d2d90c28ad01336a3eedb2fb435f7f232826e8e2cbc390097243e81169a"
     },
-    "motivations": {
-      "@value": "My motivations are centered around the belief in sound money that operates within a secure, egalitarian, and modern financial system, free from the control of a handful of elites. I am driven by the desire to enhance freedom for everyone. By becoming a delegate representative, I aim to contribute to the development of a financial ecosystem that embodies these principles, ensuring that Cardano remains a beacon of decentralized governance and finance."
-    },
-    "objectives": {
-      "@value": "My primary objective is to enhance the Cardano ecosystem by addressing key issues such as \"sticky stake\" and improving the Rewards Sharing Scheme (RSS). I aim to spearhead an Incentives Working Group through Intersect this Winter to develop and implement these improvements. Additionally, I believe in prioritizing the completion and integration of Ouroboros Leios and the development of alternate node clients to ensure a robust and scalable network. It is crucial that the teams building node clients collaborate closely with the teams developing Ouroboros Leios, as both are significant priorities and the node clients will depend on the successful completion and implementation of Ouroboros Leios."
-    },
-    "paymentAddress": {
-      "@value": "addr1qyyuf3ua0e2sjas9egqjqvza6ut3jyn0kxr3e5l2upeuasgsfm9826q0pkhau2kf6nuj0065dgejfen0kk6t7cg0d9yqedh07y"
-    },
-    "qualifications": {
-      "@value": "With dual Bachelor's Degrees in Psychology and Cybersecurity, I'm afforded a unique technical perspective within the Cardano community. My hobbies include working on open source tools and side projects and I have a working understanding of Plutus and eUTxO architecture. This year, I attended the Indianapolis dRep Workshop and Chicago dRep Pioneer Course in-person, where I had the opportunity to meet and engage with many great Cardano visionaries. As a founding member of Intersect and an active participant in the Cardano community, I am well-equipped to represent and advocate for the interests of Cardano delegators. "
-    },
+    "motivations": "My motivations are centered around the belief in sound money that operates within a secure, egalitarian, and modern financial system, free from the control of a handful of elites. I am driven by the desire to enhance freedom for everyone. By becoming a delegate representative, I aim to contribute to the development of a financial ecosystem that embodies these principles, ensuring that Cardano remains a beacon of decentralized governance and finance.",
+    "objectives": "My primary objective is to enhance the Cardano ecosystem by addressing key issues such as \"sticky stake\" and improving the Rewards Sharing Scheme (RSS). I aim to spearhead an Incentives Working Group through Intersect this Winter to develop and implement these improvements. Additionally, I believe in prioritizing the completion and integration of Ouroboros Leios and the development of alternate node clients to ensure a robust and scalable network. It is crucial that the teams building node clients collaborate closely with the teams developing Ouroboros Leios, as both are significant priorities and the node clients will depend on the successful completion and implementation of Ouroboros Leios.",
+    "paymentAddress": "addr1qyyuf3ua0e2sjas9egqjqvza6ut3jyn0kxr3e5l2upeuasgsfm9826q0pkhau2kf6nuj0065dgejfen0kk6t7cg0d9yqedh07y",
+    "qualifications": "With dual Bachelor's Degrees in Psychology and Cybersecurity, I'm afforded a unique technical perspective within the Cardano community. My hobbies include working on open source tools and side projects and I have a working understanding of Plutus and eUTxO architecture. This year, I attended the Indianapolis dRep Workshop and Chicago dRep Pioneer Course in-person, where I had the opportunity to meet and engage with many great Cardano visionaries. As a founding member of Intersect and an active participant in the Cardano community, I am well-equipped to represent and advocate for the interests of Cardano delegators. ",
     "references": [
       {
         "@type": "Link",
-        "label": {
-          "@value": "Tempo"
-        },
-        "uri": {
-          "@value": "https://tempo.vote/drep-profile?dRepId=drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
-        }
+        "label": "Tempo",
+        "uri": "https://tempo.vote/drep-profile?dRepId=drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
       },
       {
         "@type": "Link",
-        "label": {
-          "@value": "1694"
-        },
-        "uri": {
-          "@value": "https://www.1694.io/en/dreps/drep18c6dw0e6z9lx65f22zrzgl0z49j48k39ttxqk4q6h953utzepy5"
-        }
+        "label": "1694.io",
+        "uri": "https://www.1694.io/en/dreps/drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
       },
       {
         "@type": "Link",
-        "label": {
-          "@value": "Reach Your People"
-        },
-        "uri": {
-          "@value": "https://www.ryp.io/projects/26"
-        }
+        "label": "Reach Your People",
+        "uri": "https://www.ryp.io/projects/26"
       },
       {
         "@type": "Link",
-        "label": {
-          "@value": "Vyra"
-        },
-        "uri": {
-          "@value": "https://vyra.io/cerkoryn"
-        }
+        "label": "SyncGovHub",
+        "uri": "https://www.syncgovhub.com/drep/drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
+      },
+      {
+        "@type": "Link",
+        "label": "dRepWatch",
+        "uri": "https://www.drep.watch/profile/drep1yglrf4el8gghum239fggvfrau25k2576y4dvcz65r2ukj8sqpsc2k"
       },
       {
         "@type": "Identity",
-        "label": {
-          "@value": "X"
-        },
-        "uri": {
-          "@value": "https://x.com/Cerkoryn"
-        }
+        "label": "X",
+        "uri": "https://x.com/Cerkoryn"
       }
     ]
   }
