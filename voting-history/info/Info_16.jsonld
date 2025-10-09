@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "DeFi liquidity for stablecoins on Cardano is without a doubt one of the most important issues to address in our ecosystem.  This proposal has gone through the ringer as individuals within the community have come forth with valid criticisms regarding DEX choices, stablecoin selection, multisig centralization risks, committee management expertise, and governance oversight mechanisms.  Due to this feedback, the proposal has undergone multiple rounds of revision and improvement that has led us to the current iteration.  \n\nThere are still many arguments that could be made for making further improvements to the proposal, but it is entirely possible that this could go on forever, leaving us locked in governance bureaucracy that has us constantly trying to satisfy every community concern.  However, I don't think it would be reasonable to expect perfection out of the very first iteration of a proposal of this type, and the need to improve stablecoin liquidity is heavy.  For these reasons, I believe the best path forward is to vote YES on this proposal and offer grace to the committee members if it doesn't work out perfectly.  Voltaire himself phrased this the best I think...\n\n\"Perfect is the enemy of good.\" -Voltaire"
+  },
+  "hashAlgorithm": "blake2b-256"
+}
