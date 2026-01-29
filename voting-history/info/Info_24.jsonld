@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "Although I am a big fan of SIDAN Lab and DeltaDefi, I’m voting NO on this Budget Info Action because I don’t believe the Cardano Treasury should be used to subsidize individual dApps via grant-style funding, even if the dApp is well-designed or positioned as “infrastructure.” If Cardano wants to support promising commercial ventures, I’d rather see capital deployed through structures that create accountability and potential return to the Treasury (e.g., loans, revenue-share, or equity-like instruments) instead of one-way grants.\n\nI also think this team would be a better fit for alternative funding and incubation paths like Cardano Builders DAO to help them expand, validate demand, and scale in a way that aligns incentives without setting a precedent for Treasury-funded dApp subsidies."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
