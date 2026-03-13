@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "This Intersect Budget Process is a substantial improvement from last year.  Using the product committee Vision and Strategy as a guideline for selecting those budget items that align with community goals is great (though I have separate concerns with the Vision/Strategy which I have communicated to them).  Using the Strategic Pillars (deliverables) and aligning them to Ecosystem KPIs (outcomes) is something I've been hoping to see, so I'm glad to see it mentioned.  Furthermore, structuring bundles as clearly-scoped Work Packages is a great way of bundling together budget items that share dependencies.\n\nRegarding the Treasury Donation, I wonder if that 1000 ADA would be better served compensating the dReps/CC members who do the work reading through each of these proposals.  Additionally it seems strange to me that vendors would prefer this donation, as the opportunity cost of paying a 100k ADA deposit for a standalone withdrawal is only about 200-300 ADA.  I'm a big fan of the 67% Ekklesia threshold (necessary improvement from last year's 50% threshold), though I am a bit unsure about the consequences of using participating stake off-chain vs. active stake on-chain.\n\nUltimately I think this budget process is a huge improvement and I am happy to vote YES on this proposal."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
