@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I am voting NO on this proposal. Although OriLife seems like an interesting project, I don’t believe this is the right use of Cardano Treasury funds right now. The proposal asks for 2.4M ADA, but the direct return to Cardano appears limited. Historically, we also haven’t really seen traceability proposals translate into meaningful on-chain transaction volume.\n\nI also think the hardest parts of this proposal are off-chain and difficult for DReps to verify. Blockchain can prove that data was anchored, but it cannot by itself prove that fruit identification, field data, farmer onboarding, regulatory integrations, and supply-chain workflows are correct at scale. I would rather see the Treasury prioritize core infrastructure, alt. nodes, Leios, high assurance, developer tooling, and use cases that clearly depend on Cardano itself."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
