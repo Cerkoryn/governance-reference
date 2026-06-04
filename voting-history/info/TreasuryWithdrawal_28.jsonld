@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I am voting NO on this proposal as submitted. I want to be clear that this is not a vote against IO Research or against research in general. I think several parts of this proposal are valuable, especially post-quantum readiness and some of the governance and identity workstreams. Cardano’s research foundation is one of its biggest strengths and I do not want to throw that away or see our expert researchers laid off.\n\nThat said, I am not convinced this is the right treasury allocation right now. The ask is very large, and the proposal covers many different workstreams with very different levels of urgency, clarity, and practical connection to implementation. Some of the work seems important, but some of it feels less clearly justified at this stage, especially given the current NCL environment and the number of competing priorities already in front of the treasury.\n\nMy biggest concern is the gap between research and deployed implementations. The proposal itself points out that IO Research has produced a very large body of work, but only a minority of that work has made it into Cardano. And of the research we've actually implemented, we've often neglected to follow through, instead letting the blockchain network drift into a very rough state by many different metrics.  In my view, that is the central issue. Cardano needs to do a better job turning the research we already have into practical application and execution.\n\nI would be much more comfortable supporting targeted follow-up proposals that make the highest-priority parts of this work easier to evaluate on their own merits and that show a clearer path from research to implementation. I am especially open to future proposals around post-quantum security and other workstreams where the urgency and practical path are clearer.\n\nFor these reasons, I am voting NO on this proposal. I appreciate the work and the people involved, but I do not believe this proposal, at this size and in this form, is the best use of treasury funds right now."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
