@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I think Scalus is taking the right approach by building a vertically integrated stack that combines smart contract development, application tooling, chain access, and L2 scaling. Especially native Hydrozoa/Gummiworm which are improvements to Hydra.  It also offers a different value proposition by focusing on use cases that should not have to depend on third-party chain-access providers. Scalus also opens Cardano to the much larger JVM ecosystem through Java, Kotlin, and Scala. In addition to enterprise and financial applications, I think this could eventually create a stronger foundation for Android-native Cardano tooling and applications across a massive global device ecosystem. The ask is pretty high, but Scalus is an established open-source platform with existing integrations and applications already building on it.  For these reasons, I am willing to justify the price by voting YES."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
