@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "@language": "en",
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "CIP108": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0108/README.md#",
+    "CIP116": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0116/README.md#",
+    "CIP169": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0169/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP108:body",
+      "@context": {
+        "references": {
+          "@id": "CIP108:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP108:referenceHash",
+              "@context": {
+                "hashDigest": "CIP108:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "title": "CIP108:title",
+        "abstract": "CIP108:abstract",
+        "motivation": "CIP108:motivation",
+        "rationale": "CIP108:rationale",
+        "onChain": {
+          "@id": "CIP169:onChain",
+          "@context": {
+            "deposit": {
+              "@id": "CIP116:deposit",
+              "@type": "CIP116:UInt64"
+            },
+            "reward_account": {
+              "@id": "CIP116:reward_account",
+              "@type": "CIP116:RewardAddress"
+            },
+            "gov_action": {
+              "@id": "CIP116:GovAction",
+              "@context": {
+                "tag": "CIP116:info_action"
+              }
+            }
+          }
+        },
+        "cip179": {
+          "@id": "CIP179:link",
+          "@context": {
+            "specVersion": "CIP179:specVersion",
+            "kind": "CIP179:kind",
+            "surveyTxId": "CIP179:surveyTxId",
+            "surveyIndex": "CIP179:surveyIndex"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    },
+    "CIP179": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0179/README.md#"
+  },
+  "authors": [
+    {
+      "name": "Cerkoryn",
+      "witness": {
+        "witnessAlgorithm": "ed25519",
+        "publicKey": "62beadaa2f4d2db6e7a5cbe16ca768307925e2a5e2dda3ca130c899e0933b402",
+        "signature": "3d34c0d5a0861fdbad9a1338cb1759d7d186cc7cd762023a09c10822bdbf2f701d95bd1ae3b2cb28895c23a963e76a2684e64d237b0b47fe5bf2320bb27a9d0e"
+      }
+    }
+  ],
+  "hashAlgorithm": "blake2b-256",
+  "body": {
+    "title": "Dijkstra-era Hard Fork CIP Shortlist",
+    "abstract": "This Info Action presents a list of possible Cardano Improvement Proposals (CIPs) to be included in the scope of the Dijkstra-era hard fork (expected as Protocol Version 12). The linked survey will capture dRep preferences on each of these items for voting and prioritization. Note that voting for/against this action as a whole indicates approval/disapproval of the process, not of the associated changes.",
+    "motivation": "The Dijkstra-era hard fork is expected to include a set of protocol changes drawn from a short list of candidates for community consideration.\n\nThis Info Action provides a clear, transparent, and standardized way for dReps to vote on those changes and to indicate their relative priorities for inclusion in the Dijkstra-era hard fork. It does not propose a definitive list.\n\n### Interpretation of the formal governance vote\n\nThe formal **YES / NO / ABSTAIN** vote on this Info Action should be interpreted as follows:\n\n* **YES**: I support this process\n* **NO**: I do not support this process.\n* **ABSTAIN**: I decline to take a position on this process.\n\nVotes on the actual CIPs should be recorded in vote response metadata using the format described in **CIP-179**.",
+    "rationale": "### Candidate CIPs\n\nThe following candidate CIPs are proposed for dRep voting and prioritization in the Dijkstra era:\n\n* **CIP-23 - [Fair Min Fees](https://cips.cardano.org/cip/CIP-23)**\n* **CIP-50 - [Pledge Leverage-Based Staking Rewards](https://cips.cardano.org/cip/CIP-50)**\n* **CIP-112 - [Observe Script Type](https://cips.cardano.org/cip/CIP-112)**\n* **CIP-118 - [Nested Transactions](https://cips.cardano.org/cip/CIP-118)**\n* **CIP-140 - [Ouroboros Peras - Faster Settlement](https://cips.cardano.org/cip/CIP-140)**\n* **CIP-156 - [Plutus Core Builtin Function - multiIndexArray](https://cips.cardano.org/cip/CIP-0156)**\n* **CIP-159 - [Account Address Enhancement](https://cips.cardano.org/cip/CIP-159)**\n* **CIP-160 - [Receiving Script Purpose and Addresses](https://cips.cardano.org/cip/CIP-0160)**\n* **CIP-163 - [Time-Bound Delegation with Dynamic Rewards](https://cips.cardano.org/cip/CIP-163)**\n* **CIP-164 - [Ouroboros Linear Leios](https://cips.cardano.org/cip/CIP-164)**\n* **CIP-167 - [Remove `isValid` from transactions](https://cips.cardano.org/cip/CIP-167)**\n* **CIP-173 - [Net Change Limit Parameter](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0173)**\n* **CIP-176 - [Non-segregated Block Body Serialization](https://cips.cardano.org/cip/CIP-176)**\n* **CIP-181 - [Remove DRep Requirement for Reward Withdrawals](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0181)**\n\n### Nature of the outcome\n\nThis survey is advisory and informational. It is intended to capture dRep sentiment on the listed candidate CIPs and provide a clear public signal regarding both support and relative priority for inclusion in the Dijkstra-era hard fork.\n\nThe outcome of this survey does not by itself enact any CIP or confirm any work. Final releases still depend on implementation readiness, development, testing, and release coordination.\n\ndReps are invited to review the candidate CIPs presented in this Info Action and cast their votes accordingly. The resulting tallies should be used as a transparent public signal to help guide Dijkstra-era hard fork composition and prioritization.\n\n### Disclaimer on survey results\n\nBecause the poll results for this survey reside in linked **CIP-179** metadata, any interim or early-reported results should be treated as provisional. The results of this survey should not be considered final until the survey has ended and the corresponding responses have been validated and tallied.",
+    "references": [
+      {
+        "@type": "Other",
+        "label": "CIP-179",
+        "uri": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0179/README.md"
+      }
+    ],
+    "onChain": {
+      "deposit": "1000000000",
+      "reward_account": "stake_test1uqwtlcfpn6pd3s4704h0ctvgu9qgv7yppjx556twzavkengyew6ry",
+      "gov_action": {
+        "tag": "info_action"
+      }
+    },
+    "cip179": {
+      "specVersion": 5,
+      "kind": "survey-link",
+      "surveyTxId": "9b11ceecac480acaec406ff9c6adcfed317ba24ba9cae588d132868a86e00763",
+      "surveyIndex": 0
+    }
+  }
+}
