@@ -1,0 +1,128 @@
+{
+  "@context": {
+    "@language": "en",
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "CIP108": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0108/README.md#",
+    "CIP116": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0116/README.md#",
+    "CIP169": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0169/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP108:body",
+      "@context": {
+        "references": {
+          "@id": "CIP108:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP108:referenceHash",
+              "@context": {
+                "hashDigest": "CIP108:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "title": "CIP108:title",
+        "abstract": "CIP108:abstract",
+        "motivation": "CIP108:motivation",
+        "rationale": "CIP108:rationale",
+        "onChain": {
+          "@id": "CIP169:onChain",
+          "@context": {
+            "deposit": {
+              "@id": "CIP116:deposit",
+              "@type": "CIP116:UInt64"
+            },
+            "reward_account": {
+              "@id": "CIP116:reward_account",
+              "@type": "CIP116:RewardAddress"
+            },
+            "gov_action": {
+              "@id": "CIP116:GovAction",
+              "@context": {
+                "tag": "CIP116:info_action"
+              }
+            }
+          }
+        },
+        "cip179": {
+          "@id": "CIP179:link",
+          "@context": {
+            "specVersion": "CIP179:specVersion",
+            "kind": "CIP179:kind",
+            "surveyTxId": "CIP179:surveyTxId",
+            "surveyIndex": "CIP179:surveyIndex"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    },
+    "CIP179": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0179/README.md#"
+  },
+  "authors": [
+    {
+      "name": "Cerkoryn",
+      "witness": {
+        "witnessAlgorithm": "ed25519",
+        "publicKey": "62beadaa2f4d2db6e7a5cbe16ca768307925e2a5e2dda3ca130c899e0933b402",
+        "signature": "5d033618d8e1248739bd40503feaf6082a87295b4d5b223331fc490e3158bc39056b0ecc1f4b97f9af03bd99d7fdf7d2e76a7a865d58d39eaa189274f0a3f80a"
+      }
+    }
+  ],
+  "hashAlgorithm": "blake2b-256",
+  "body": {
+    "title": "Dijkstra-Era Hard Fork Scope",
+    "abstract": "This Info Action seeks endorsement from Cardano DReps regarding the proposed scope for the Dijkstra-era hard fork, expected as Protocol Version 12.\n\nThe proposed scope is intentionally focused. It includes complete features planned for Dijkstra, structural groundwork for later intra-era upgrades, features that may be included if implementation readiness permits, and an explicit record of items deferred or not included.\n\nThe formal YES / NO / ABSTAIN vote applies to this scope as a whole. An optional linked CIP-179 survey provides stakeholders with a way to submit more granular feedback. However, participation in this survey is optional and for informational purposes only.",
+    "motivation": "The Dijkstra era needs a scope that is technically coherent, achievable, and clear to the community before implementation and hard-fork readiness work advances. The Cardano Hard Fork Working Group has developed the scope below to deliver complete features, remove known governance friction, and prepare the block body for later protocol improvements without prematurely activating unfinished work.\n\nOuroboros Peras and Ouroboros Linear Leios are among the most significant protocol improvements on Cardano's horizon, but neither is assumed to be ready for inclusion. The proposed plan therefore includes the structural block-body changes they require. If either feature reaches mainnet readiness in time, the working group may include its full activation in Dijkstra. Otherwise, the groundwork will allow activation through a later intra-era hard fork.",
+    "rationale": "### The case for a thin hard fork\n\nDijkstra is designed as a focused, low-risk hard fork. Rather than bundling many speculative changes, it delivers a clear set of complete features, clears governance friction points, and lays structural groundwork in the block body for protocol upgrades that can follow without requiring those upgrades to be ready now.\n\n### In scope\n\n#### Nested Transactions ([CIP-118](https://cips.cardano.org/cip/CIP-0118))\n\nThe primary feature of the Dijkstra hard fork. Nested transactions allow a transaction to contain child transactions with independent witnesses and execution contexts, enabling significantly more expressive on-chain logic. Implementation is well advanced and this is the feature that justifies the hard fork.\n\n#### Observe Script Type / Guard Scripts ([CIP-112](https://cips.cardano.org/cip/CIP-0112))\n\nIntroduces a new script type that can observe transaction validity without being executed as part of spending or minting. It is required for expressive transaction guards and is a dependency for the PlutusV4 script context.\n\n#### Account Address Enhancement, Phase 1 ([CIP-159](https://cips.cardano.org/cip/CIP-0159))\n\nPhase 1 of account address improvements. It delivers the ledger-level definitions needed to support account-style addresses on Cardano.\n\n#### Remove `isValid` from Transactions ([CIP-167](https://cips.cardano.org/cip/CIP-0167))\n\nRemoves the `isValid` field from transactions, simplifying the transaction structure and reducing complexity in script execution.\n\n#### Non-segregated Block Body Serialization ([CIP-176](https://cips.cardano.org/cip/CIP-0176))\n\nChanges block-body serialization to a non-segregated format, a prerequisite for the block-body extensions needed by Leios and other future features.\n\n#### PlutusV4 Script Context\n\nIntroduces the updated script context for PlutusV4, enabling scripts to observe the new transaction and ledger structures introduced in Dijkstra.\n\n#### Fee Function Update for Reference Inputs\n\nUpdates the fee function to account for reference inputs. This work does not currently have a CIP. Parameters will initially be hardcoded, with a path to make them updatable later.\n\n#### Reference Script Pricing and Limits\n\nReference script pricing and limits are already active on Conway. This item requires a constitution update so that the parameters are formally updatable through governance; it does not require a new ledger feature activation in Dijkstra.\n\n#### Remove DRep Requirement for Reward Withdrawals ([CIP-181](https://cips.cardano.org/cip/CIP-0181))\n\nRemoves the requirement for a DRep delegation to be present when withdrawing staking rewards, reducing friction for ada holders who want to withdraw without participating in governance.\n\n#### Fair Min Fees ([CIP-23](https://cips.cardano.org/cip/CIP-0023))\n\nIntroduces the `minPoolMargin` protocol parameter and implements the associated fee rules.\n\n#### Pledge Leverage-Based Staking Rewards ([CIP-50](https://cips.cardano.org/cip/CIP-0050))\n\nIntroduces a maximum pledge leverage parameter and updates the staking reward formula to limit the stake eligible for rewards relative to a pool's pledge.\n\n> [!NOTE]  \n> An independent team will implement this work and then coordinate integration and testing with the Ledger team in order to help meet timeline and capacity constraints.\n\n### Block-body building blocks\n\nThe following are structural changes included in Dijkstra, not commitments to full feature activation. Including them means that later activations can proceed through intra-era hard forks without another era-level block-body redesign.\n\n| Change | Purpose |\n| --- | --- |\n| [CIP-140](https://cips.cardano.org/cip/CIP-0140) Peras header extensions | Reserves space for Peras voting fields without activating the Peras voting layer. |\n| [CIP-164](https://cips.cardano.org/cip/CIP-0164) Leios block-body extensions | Introduces the input-block and endorser-block structures required by Leios without activating the full protocol. |\n\n### Conditional on readiness\n\nIf Peras or Leios reaches mainnet readiness by the time the committed Dijkstra scope is delivered, it may be pulled forward and activated in the Dijkstra hard fork. Otherwise, only its structural groundwork will ship with Dijkstra and full activation will be planned as an intra-era hard fork.\n\n| CIP | Title |\n| --- | --- |\n| [CIP-140](https://cips.cardano.org/cip/CIP-0140) | Ouroboros Peras: Faster Settlement |\n| [CIP-164](https://cips.cardano.org/cip/CIP-0164) | Ouroboros Linear Leios |\n\n### Considered but not included in the Dijkstra hard fork\n\nThe following proposals were evaluated for Dijkstra but are not included in this hard-fork scope.\n\n| Proposal | Title | Rationale |\n| --- | --- | --- |\n| [CIP-180](https://github.com/cardano-foundation/CIPs/pull/1157) | Producer Identification | The ledger team does not have capacity to implement it within this era, and alternative node implementations have not reached agreement on the approach. |\n| [CPS-0023](https://github.com/cardano-foundation/CIPs/pull/1103) | Cardano Multi Asset Treasury | Requires the CIP-159 account-address
+ infrastructure included in Dijkstra to lay the groundwork. It is better targeted at Euler once that foundation is in place. |\n| [CIP-156](https://cips.cardano.org/cip/CIP-0156) | Plutus Core Builtin Function - `multiIndexArray` | Not included in the PlutusV4 scope for Dijkstra due to limited Plutus team resources. Because it requires no ledger changes, it could potentially be included in a later intra-era hard fork if capacity permits. |\n| [CIP-160](https://cips.cardano.org/cip/CIP-0160) | Receiving Script Purpose and Addresses | Insufficient ledger resources are available to implement it within this era given its complexity. |\n| [CIP-163](https://cips.cardano.org/cip/CIP-0163) | Time-Bound Delegation with Dynamic Rewards | Explicitly contentious: the same community poll saw 54.1% vote NO, making it the most rejected item on the shortlist. Including it would give opponents a clear reason to vote against the hard fork. |\n| [CIP-173](https://github.com/cardano-foundation/CIPs/pull/1129) | Net Change Limit Parameter | A major overhaul that is not implementable with the current ledger state. The ledger does not retain the history of past epoch inflows and outflows required by the NCL calculation. It needs a detailed implementation plan before it can be scoped and is better targeted at Euler or beyond. |\n| [CIP-175](https://github.com/cardano-foundation/CIPs/pull/1140) | Stake Pool Hot Credentials | Too complex to implement given existing ledger team commitments for this era. It is better targeted at Euler. |\n\n### Wishlist and future consideration\n\nThe following items were raised by the community but are not currently candidates for a scheduled hard fork.\n\n| Proposal | Title |\n| --- | --- |\n| [CIP-182](https://github.com/cardano-foundation/CIPs/pull/1164) | Optimistic Constitutionality |\n| [CIP-168](https://github.com/cardano-foundation/CIPs/pull/1090) | More `BuiltinValue` Functions |\n| [CIP proposal](https://github.com/cardano-foundation/CIPs/pull/1072) | More Descriptive Script Purposes |\n| No CIP yet | Quantum-secure signature schemes |\n\n### Nature of the endorsement\n\nAn endorsement supports this scope as a planning boundary and public direction for Dijkstra. It does not guarantee that every in-scope feature will ship unchanged. Final inclusion still depends on implementation, specification maturity, testing, security review, ecosystem readiness, release coordination, and any additional governance actions required by the Cardano Constitution.\n\n### Optional CIP-179 survey\n\nThis Info Action links an optional [CIP-179](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0179/README.md) survey. The survey allows DReps, SPOs, CC members, and ADA holders to provide granular feedback on the proposed scope. Submitting a survey response is optional and can be included in the metadata attached to a formal governance vote or apart from one.\n\nAt the time of writing, the following tools provide full or partial support for participating in this CIP-179 survey:\n\n* **[Civitas](https://www.civitasexplorer.com)** - DReps with or without governance vote, ADA holders without\n* **[GovTool](https://gov.tools)** - DReps only (pending PR merge)\n* **[CGov](https://app.cgov.io)** - DReps only (pending PR merge)\n* **[ATADA Voting Scripts](https://github.com/gitmachtl/scripts)** - DReps, SPOs, and CC members (pending PR merge)\n* **[Tessera](https://tessera-preview.matthieu-pizenberg.workers.dev/survey/1356f08e538c2ea75b6b28e5a32c89c9b5d954f6aa9d616db7708a1bbbf689eb%3A0)** - DReps and ADA holders (pending mainnet version)\n\nThese tools are conveniences, not hard requirements. A valid response is the CIP-179 metadata recorded on-chain and validated against the survey definition and applicable credential proof.\n\nInterim survey results should be treated as provisional.",
+    "references": [
+      {
+        "@type": "Other",
+        "label": "Cardano Hard Fork Working Group",
+        "uri": "https://groups.docs.intersectmbo.org/groups-overview/working-groups/hard-fork-working-group"
+      },
+      {
+        "@type": "Other",
+        "label": "Cardano Upgrades",
+        "uri": "https://cardanoupgrades.docs.intersectmbo.org/"
+      },
+      {
+        "@type": "Other",
+        "label": "CIP-179 - On-Chain Surveys and Polls",
+        "uri": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0179/README.md"
+      }
+    ],
+    "onChain": {
+      "deposit": "1000000000",
+      "reward_account": "stake_test1uqwtlcfpn6pd3s4704h0ctvgu9qgv7yppjx556twzavkengyew6ry",
+      "gov_action": {
+        "tag": "info_action"
+      }
+    },
+    "cip179": {
+      "specVersion": 5,
+      "kind": "survey-link",
+      "surveyTxId": "1356f08e538c2ea75b6b28e5a32c89c9b5d954f6aa9d616db7708a1bbbf689eb",
+      "surveyIndex": 0
+    }
+  }
+}
